@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
           </motion.div>
 
           {/* Main Heading */}
-          <div className="overflow-hidden mb-3">
+          <div className="overflow-hidden mb-2">
             {headingWords.map((word, i) => (
               <div key={word} className="overflow-hidden">
                 <motion.h1
@@ -75,10 +75,10 @@ const Hero: React.FC = () => {
                     delay: 0.3 + i * 0.15,
                     ease: [0.23, 1, 0.32, 1],
                   }}
-                  className={`font-kanit font-black leading-[0.9] tracking-tight block whitespace-nowrap ${
+                  className={`font-kanit font-black leading-[0.95] tracking-tight block whitespace-nowrap text-5xl sm:text-7xl md:text-8xl lg:text-[100px] ${
                     i === 1
-                      ? 'text-gradient-gold text-[clamp(48px,10vw,160px)] md:text-[min(13vw,160px)]'
-                      : 'text-[#D7E2EA] text-[clamp(48px,10vw,160px)] md:text-[min(13vw,160px)]'
+                      ? 'text-gradient-gold'
+                      : 'text-[#D7E2EA]'
                   }`}
                 >
                   {word}
@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="text-[#8A9BAB] font-kanit font-light text-base md:text-xl leading-relaxed max-w-xl mt-4 md:mt-8 mb-8 md:mb-12"
+            className="text-[#8A9BAB] font-kanit font-light text-base md:text-lg leading-relaxed max-w-xl mt-4 mb-6"
           >
             Premium supplier of marble, granite, temples, statues, flooring, countertops, and
             customized stone solutions for{' '}
@@ -104,14 +104,14 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex flex-wrap items-center gap-5"
+            className="flex flex-wrap items-center gap-4"
           >
             {/* Magnetic CTA */}
             <MagneticButton strength={0.4}>
               <motion.button
                 id="hero-get-quote-btn"
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-10 py-4 bg-[#C8A96A] text-[#0C0C0C] font-kanit font-bold text-base tracking-wider rounded-full hover:bg-[#E2C98A] transition-all duration-300 shadow-2xl shadow-[#C8A96A]/30 hover:shadow-[#C8A96A]/50"
+                className="px-8 py-3.5 bg-[#C8A96A] text-[#0C0C0C] font-kanit font-bold text-sm tracking-wider rounded-full hover:bg-[#E2C98A] transition-all duration-300 shadow-2xl shadow-[#C8A96A]/30 hover:shadow-[#C8A96A]/50"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -122,15 +122,15 @@ const Hero: React.FC = () => {
             {/* Phone CTA */}
             <motion.a
               href="tel:+919829095295"
-              className="flex items-center gap-3 px-6 py-4 glass gold-border rounded-full hover:border-[#C8A96A]/50 transition-all duration-300 group"
+              className="flex items-center gap-3 px-5 py-3 glass gold-border rounded-full hover:border-[#C8A96A]/50 transition-all duration-300 group"
               whileHover={{ scale: 1.03 }}
             >
-              <div className="w-8 h-8 bg-[#C8A96A]/10 rounded-full flex items-center justify-center group-hover:bg-[#C8A96A]/20 transition-colors">
-                <Phone size={14} className="text-[#C8A96A]" />
+              <div className="w-7 h-7 bg-[#C8A96A]/10 rounded-full flex items-center justify-center group-hover:bg-[#C8A96A]/20 transition-colors">
+                <Phone size={13} className="text-[#C8A96A]" />
               </div>
               <div>
-                <div className="text-[#8A9BAB] font-kanit font-light text-[10px] tracking-widest uppercase">Call Us</div>
-                <div className="text-[#D7E2EA] font-kanit font-medium text-sm">+91 98290 95295</div>
+                <div className="text-[#8A9BAB] font-kanit font-light text-[9px] tracking-widest uppercase">Call Us</div>
+                <div className="text-[#D7E2EA] font-kanit font-medium text-xs">+91 98290 95295</div>
               </div>
             </motion.a>
           </motion.div>
@@ -140,7 +140,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.4 }}
-            className="flex flex-wrap gap-8 md:gap-10 mt-8 pt-6 border-t border-[#C8A96A]/10"
+            className="flex flex-wrap gap-8 md:gap-12 mt-6 pt-5 border-t border-[#C8A96A]/10"
           >
             {[
               { value: '500+', label: 'Projects Completed' },
@@ -149,8 +149,8 @@ const Hero: React.FC = () => {
               { value: '100%', label: 'Client Satisfaction' },
             ].map((stat) => (
               <div key={stat.label} className="text-left">
-                <div className="text-gradient-gold font-kanit font-black text-3xl md:text-4xl">{stat.value}</div>
-                <div className="text-[#8A9BAB] font-kanit font-light text-xs tracking-widest uppercase mt-1">{stat.label}</div>
+                <div className="text-gradient-gold font-kanit font-black text-2xl md:text-3xl">{stat.value}</div>
+                <div className="text-[#8A9BAB] font-kanit font-light text-[10px] md:text-xs tracking-widest uppercase mt-0.5">{stat.label}</div>
               </div>
             ))}
           </motion.div>

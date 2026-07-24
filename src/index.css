@@ -114,7 +114,7 @@ body {
   }
 
   .section-padding {
-    padding: 88px 0;
+    padding: 64px 0;
   }
 
   .container-custom {
@@ -249,7 +249,7 @@ body {
     padding: 0 20px;
   }
   .section-padding {
-    padding: 64px 0;
+    padding: 48px 0;
   }
   .max-w-3xl {
     max-width: 100%;
@@ -261,7 +261,7 @@ body {
     padding: 0 16px;
   }
   .section-padding {
-    padding: 48px 0;
+    padding: 36px 0;
   }
 }
 
