@@ -167,7 +167,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, x: 40, scale: 0.95 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
-              className="relative w-full max-w-[380px] lg:max-w-none h-[420px] sm:h-[480px] lg:h-[540px]"
+              className="relative w-full max-w-[380px] lg:max-w-[460px] xl:max-w-[480px] h-[420px] sm:h-[480px] lg:h-[540px]"
             >
               {/* Main photo frame */}
               <div className="relative w-full h-full rounded-3xl overflow-hidden gold-border gold-glow">
