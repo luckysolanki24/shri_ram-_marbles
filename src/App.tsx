@@ -47,7 +47,7 @@ const BackToTop: React.FC = () => {
 
 function App() {
   return (
-    <div className="bg-[#0C0C0C] min-h-screen font-kanit">
+    <div className="bg-[#0C0C0C] min-h-screen font-kanit w-full max-w-full overflow-x-hidden relative">
       <Navbar />
       <main>
         <Hero />

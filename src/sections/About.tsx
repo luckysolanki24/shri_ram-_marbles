@@ -35,7 +35,7 @@ const About: React.FC = () => {
 
               {/* Floating accent card */}
               <motion.div
-                className="absolute -bottom-8 -right-8 w-52 h-52 rounded-2xl overflow-hidden gold-border shadow-2xl"
+                className="absolute -bottom-8 -right-2 sm:-right-4 w-44 sm:w-52 h-44 sm:h-52 rounded-2xl overflow-hidden gold-border shadow-2xl"
                 initial={{ opacity: 0, scale: 0.8, rotate: -6 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: -3 }}
                 viewport={{ once: true }}
