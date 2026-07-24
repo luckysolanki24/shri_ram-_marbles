@@ -1,0 +1,308 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================== */
+/* CSS Variables          */
+/* ===================== */
+:root {
+  --color-bg: #0C0C0C;
+  --color-surface: #141414;
+  --color-surface-2: #1C1C1C;
+  --color-text: #D7E2EA;
+  --color-text-muted: #8A9BAB;
+  --color-gold: #C8A96A;
+  --color-gold-light: #E2C98A;
+  --color-gold-dark: #A08545;
+  --font-primary: 'Kanit', sans-serif;
+}
+
+/* ===================== */
+/* Base Styles            */
+/* ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: #0C0C0C;
+  color: #D7E2EA;
+  font-family: 'Kanit', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===================== */
+/* Selection              */
+/* ===================== */
+::selection {
+  background: rgba(200, 169, 106, 0.3);
+  color: #E2C98A;
+}
+
+/* ===================== */
+/* Scrollbar              */
+/* ===================== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0C0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8A96A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E2C98A;
+}
+
+/* ===================== */
+/* Custom Utilities       */
+/* ===================== */
+@layer utilities {
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C8A96A 0%, #E2C98A 40%, #D4B87A 60%, #C8A96A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-white-gold {
+    background: linear-gradient(135deg, #ffffff 0%, #E2C98A 50%, #C8A96A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(200, 169, 106, 0.1);
+  }
+
+  .glass-light {
+    background: rgba(28, 28, 28, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(200, 169, 106, 0.08);
+  }
+
+  .gold-border {
+    border: 1px solid rgba(200, 169, 106, 0.3);
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 30px rgba(200, 169, 106, 0.15), 0 0 60px rgba(200, 169, 106, 0.05);
+  }
+
+  .gold-glow-strong {
+    box-shadow: 0 0 40px rgba(200, 169, 106, 0.3), 0 0 80px rgba(200, 169, 106, 0.1);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 30px rgba(200, 169, 106, 0.4);
+  }
+
+  .section-padding {
+    padding: 88px 0;
+  }
+
+  .container-custom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .marble-card {
+    background: linear-gradient(145deg, #1C1C1C 0%, #141414 100%);
+    border: 1px solid rgba(200, 169, 106, 0.1);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .marble-card:hover {
+    border-color: rgba(200, 169, 106, 0.35);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(200, 169, 106, 0.1);
+    transform: translateY(-4px);
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* ===================== */
+/* Marquee Animation      */
+/* ===================== */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.marquee-track-reverse {
+  animation: marquee-scroll-reverse 35s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-scroll-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* ===================== */
+/* Noise Texture Overlay  */
+/* ===================== */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* ===================== */
+/* Gold Shimmer Effect    */
+/* ===================== */
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #C8A96A 0%,
+    #E2C98A 25%,
+    #F5DFA0 50%,
+    #E2C98A 75%,
+    #C8A96A 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gold-shimmer-anim 3s linear infinite;
+}
+
+@keyframes gold-shimmer-anim {
+  to { background-position: 200% center; }
+}
+
+/* ===================== */
+/* Floating Animation     */
+/* ===================== */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(1deg); }
+  66% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+/* ===================== */
+/* Sticky Card Stack      */
+/* ===================== */
+.sticky-card {
+  position: sticky;
+  top: 100px;
+}
+
+/* ===================== */
+/* White Section Override */
+/* ===================== */
+.white-section {
+  background: #ffffff;
+  color: #0C0C0C;
+}
+
+.white-section .text-gradient-gold {
+  background: linear-gradient(135deg, #A08545 0%, #C8A96A 50%, #A08545 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===================== */
+/* Text Alignment Fixes  */
+/* ===================== */
+
+/* Better responsive container padding on small screens */
+@media (max-width: 768px) {
+  .container-custom {
+    padding: 0 20px;
+  }
+  .section-padding {
+    padding: 64px 0;
+  }
+  .max-w-3xl {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-custom {
+    padding: 0 16px;
+  }
+  .section-padding {
+    padding: 48px 0;
+  }
+}
+
+/* Safe text overflow — only break words if they truly overflow, NO hyphenation */
+p, h1, h2, h3, h4, h5, h6, span, li {
+  overflow-wrap: break-word;
+  hyphens: none;
+}
+
+/* Use CSS text-wrap: balance for section headings for better line breaks */
+.section-heading {
+  text-wrap: balance;
+}
+
+/* Links: only break very long URLs/emails, not regular words */
+a {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Buttons: never break text */
+button, .btn {
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+/* Footer brand description: don't let it hyphenate */
+footer p {
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* Improve card text line height */
+.marble-card p {
+  line-height: 1.7;
+}
+
+/* Smooth font rendering across all elements */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
