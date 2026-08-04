@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
                       delay: 0.3 + i * 0.15,
                       ease: [0.23, 1, 0.32, 1],
                     }}
-                    className={`font-kanit font-black leading-[0.95] tracking-tight block whitespace-nowrap text-5xl sm:text-7xl md:text-8xl lg:text-[85px] xl:text-[96px] ${
+                    className={`font-kanit font-black leading-[0.95] tracking-tight block whitespace-nowrap text-5xl sm:text-7xl md:text-8xl lg:text-[85px] xl:text-[100px] ${
                       i === 1
                         ? 'text-gradient-gold'
                         : 'text-[#D7E2EA]'

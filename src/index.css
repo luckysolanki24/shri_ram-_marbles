@@ -121,13 +121,15 @@ body,
   }
 
   .section-padding {
-    padding: 64px 0;
+    padding: clamp(40px, 6vw, 80px) 0;
   }
 
+  /* Fully fluid container — fills the viewport with proportional padding.
+     clamp(min, preferred, max) ensures padding scales with screen width
+     without any hard max-width cap that would create blank side strips. */
   .container-custom {
-    max-width: 1536px;
-    margin: 0 auto;
-    padding: 0 48px;
+    width: 100%;
+    padding: 0 clamp(16px, 5vw, 80px);
   }
 
   .marble-card {
@@ -250,31 +252,11 @@ body,
 /* Text Alignment Fixes  */
 /* ===================== */
 
-/* Better responsive container padding on screens */
-@media (max-width: 1024px) {
-  .container-custom {
-    padding: 0 32px;
-  }
-}
-
+/* No fixed breakpoint overrides needed — clamp() handles all screen sizes
+   smoothly and proportionally. Only override max-w-3xl on mobile. */
 @media (max-width: 768px) {
-  .container-custom {
-    padding: 0 24px;
-  }
-  .section-padding {
-    padding: 48px 0;
-  }
   .max-w-3xl {
     max-width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .container-custom {
-    padding: 0 16px;
-  }
-  .section-padding {
-    padding: 36px 0;
   }
 }
 
